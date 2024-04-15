@@ -23,3 +23,24 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/// <reference types='Cypress'/>
+
+
+Cypress.Commands.add('getIframe', (iframe) => {
+
+    return cy.get(iframe)
+    .its('0.contentDocument.body') //Navigate to the particular element
+    .should('be.visible') //assertion
+    .then(cy.wrap)//wrap into the iframe
+
+})
+
+Cypress.Commands.add('selectProdcut', (Productname) => { 
+cy.get("h4.card-title").each(($el, index, $list) => {
+    if ($el.text().includes(Productname)) {
+
+        cy.get("button.btn.btn-info").eq(index).click();
+    }
+    })
+})

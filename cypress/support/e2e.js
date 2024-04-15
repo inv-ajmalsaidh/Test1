@@ -18,3 +18,9 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+//require('cypress-xpath') 
+
+//require ('cypress-iframe') //for iframe plugins
+import 'cypress-mochawesome-reporter/register';
+
+//require('@4tw/cypress-drag-drop') //drag and drop

@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-04-15T20:06:46.391Z",
+    "end": "2024-04-15T20:06:46.778Z",
+    "duration": 387,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "2a31db90-ef4d-4373-b14c-4381fe616a71",
+      "title": "",
+      "fullFile": "cypress\\e2e\\fixture_method.cy.js",
+      "file": "cypress\\e2e\\fixture_method.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e1eeabe1-969e-4981-a4dc-e1a8b32262eb",
+          "title": "POM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "HomePage",
+              "fullTitle": "POM HomePage",
+              "timedOut": null,
+              "duration": 346,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\fixture_method.cy.js\\\\POM -- HomePage -- before all hook (failed).png\"\n    ]\n  ]\n}",
+              "code": "// Cypress.config('defaultCommandTimeout',8000) //for specific file timeout\nhomePage.getName().type(textdata.name);\nhomePage.getEmail().type(textdata.email);\nhomePage.getPassword().type(textdata.password);\nhomePage.getCheck1().check();\nhomePage.getGender().select(textdata.gender);\nhomePage.getCheck2().check();\nhomePage.getDOB().type(textdata.dob);\nhomePage.getName().should('have.value', textdata.name);\nhomePage.getCheck3().should('be.disabled');\nhomePage.getSubmit().click();\nhomePage.getVerifyLogin().should('contain', textdata.response);",
+              "err": {
+                "message": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `POM`",
+                "estack": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `POM`\n    at Context.visit (http://localhost:57007/__cypress/runner/cypress_runner.js:130688:70)\n    at wrapped (http://localhost:57007/__cypress/runner/cypress_runner.js:138379:43)\nFrom Your Spec Code:\n    at Homepage.OpenURL (webpack://test1/./cypress/PageObject/Homepage.js:18:11)\n    at Context.eval (webpack://test1/./cypress/e2e/fixture_method.cy.js:12:17)",
+                "diff": null
+              },
+              "uuid": "a3cf751f-fd3d-4429-ad43-4f4fc3b29373",
+              "parentUUID": "e1eeabe1-969e-4981-a4dc-e1a8b32262eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "ProductPage",
+              "fullTitle": "POM ProductPage",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productPage.OpenURL();\nproductPage.getpage().click();\ntextdata.productName.forEach(function (element) {\n  cy.selectProdcut(element);\n});\nproductPage.getCart().click();\nproductPage.getCheckout().click();\nproductPage.getCountry().type(textdata.country);\nCypress.config('defaultCommandTimeout', 8000); //for specific file default config time \nproductPage.getSuggetion().click();\nproductPage.getCheckbox4().click({\n  force: true\n});\nproductPage.GetPurchase().click();\n//Assertion\nproductPage.getAlert().then(function (element) {\n  const acttext = element.text();\n  expect(acttext.includes(\"Success!\")).to.be.true;\n});",
+              "err": {},
+              "uuid": "34700840-39ca-403b-9c8d-80e482a28f4d",
+              "parentUUID": "e1eeabe1-969e-4981-a4dc-e1a8b32262eb",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a3cf751f-fd3d-4429-ad43-4f4fc3b29373"
+          ],
+          "pending": [],
+          "skipped": [
+            "34700840-39ca-403b-9c8d-80e482a28f4d"
+          ],
+          "duration": 346,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
